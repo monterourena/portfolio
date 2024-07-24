@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import SocialIcon from '@/components/Icons/SocialIcon'
+import SocialIcon from '@/components/common/Icons/SocialIcon'
 
 
 const meta = {
-  title: 'Icons/SocialIcon',
+  title: 'Common/Icons/SocialIcon',
   component: SocialIcon,
   parameters: {
     layout: 'centered'

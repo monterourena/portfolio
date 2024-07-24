@@ -5,7 +5,7 @@ import CircularButton from './CircularButton'
 
 // CONFIG
 const meta = {
-  title: 'Buttons/CircularButton',
+  title: 'Common/Buttons/CircularButton',
   component: CircularButton,
   parameters: {
     layout: 'centered'
