@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 // COMPONENTS
-import FadedCircularButton from './FadedCircularButton'
+import CircularButton from './CircularButton'
 
 // CONFIG
 const meta = {
-  title: 'Buttons/FadedCircularButton',
-  component: FadedCircularButton,
+  title: 'Buttons/CircularButton',
+  component: CircularButton,
   parameters: {
     layout: 'centered'
   },
   argTypes: {}
-} satisfies Meta<typeof FadedCircularButton>
+} satisfies Meta<typeof CircularButton>
 
 export default meta
 type Story = StoryObj<typeof meta>

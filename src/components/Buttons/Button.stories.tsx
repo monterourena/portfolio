@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import SolidButton from '@/components/Buttons/SolidButton'
+import Button from '@/components/Buttons/Button'
 
 const meta = {
-  title: 'Buttons/SolidButton',
-  component: SolidButton,
+  title: 'Buttons/Button',
+  component: Button,
   parameters: {
     layout: 'centered'
   },
@@ -12,7 +12,7 @@ const meta = {
     onClick: { action: 'onClick Event' }
   },
 
-} satisfies Meta<typeof SolidButton>
+} satisfies Meta<typeof Button>
 
 export default meta
 type Story = StoryObj<typeof meta>

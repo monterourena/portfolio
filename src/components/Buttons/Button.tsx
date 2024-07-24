@@ -1,12 +1,12 @@
 import { FC } from 'react'
 import { style } from '@/utils/tailwind.utils'
 
-interface ButtonSolidProps {
+interface ButtonProps {
   label: string
   onClick?: () => void
 }
 
-const ButtonSolid: FC<ButtonSolidProps> = ({ label, onClick }) => {
+const Button: FC<ButtonProps> = ({ label, onClick }) => {
   return (
     <button
       onClick={onClick}
@@ -21,4 +21,4 @@ const ButtonSolid: FC<ButtonSolidProps> = ({ label, onClick }) => {
   )
 }
 
-export default ButtonSolid
+export default Button

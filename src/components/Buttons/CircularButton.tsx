@@ -1,12 +1,12 @@
 import { FC, PropsWithChildren } from 'react'
 import { style } from '@/utils/tailwind.utils'
 
-interface FadedCircularButtonProps extends PropsWithChildren {
+interface CircularButtonProps extends PropsWithChildren {
   isSmall?: boolean
   isElevated?: boolean
 }
 
-const FadedCircularButton: FC<FadedCircularButtonProps> = ({ isSmall = false, isElevated, children }) => {
+const CircularButton: FC<CircularButtonProps> = ({ isSmall = false, isElevated, children }) => {
   return (
     <button
       className={style(
@@ -22,4 +22,4 @@ const FadedCircularButton: FC<FadedCircularButtonProps> = ({ isSmall = false, is
   )
 }
 
-export default FadedCircularButton
+export default CircularButton
