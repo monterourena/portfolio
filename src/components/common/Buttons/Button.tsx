@@ -1,22 +1,23 @@
 import { FC } from 'react'
 import { style } from '@/utils/tailwind.utils'
 
-interface ButtonProps {
+export interface ButtonProps {
   label: string
+  variant?: 'solid' | 'faded'
   onClick?: () => void
 }
 
-const Button: FC<ButtonProps> = ({ label, onClick }) => {
+const Button: FC<ButtonProps> = ({ label, onClick, variant = 'solid' }) => {
   return (
     <button
       onClick={onClick}
       className={style(
         'h-12 px-8 py-4 rounded-full',
-        'bg-white border-black-quaternary',
         'justify-center items-center inline-flex',
-        'hover:bg-opacity-80 hover:border-opacity-20',
+        variant === 'solid' && 'bg-white text-black-primary',
+        variant === 'faded' && 'bg-black-secondary border border-black-quaternary text-white-primary'
       )}>
-      <p className="text-black-quaternary font-bold">{label}</p>
+      <p className="text-base font-semibold">{label}</p>
     </button>
   )
 }

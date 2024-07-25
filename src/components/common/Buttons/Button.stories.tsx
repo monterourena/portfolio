@@ -17,8 +17,16 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
+export const Solid: Story = {
   args: {
+    variant:'solid',
     label: 'Solid Button',
+  }
+}
+
+export const Faded: Story = {
+  args: {
+    variant:'faded',
+    label: 'Faded Button',
   }
 }
