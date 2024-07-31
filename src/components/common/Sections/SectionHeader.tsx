@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { RenameKeys } from '@/types/common'
+import { RenameKeys } from '@/lib/typescript/utilities'
 import Button, { ButtonProps } from '@/components/common/Buttons/Button'
 import Typography from '@/components/common/Typography/Typography'
 
