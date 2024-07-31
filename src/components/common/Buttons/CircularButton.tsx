@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { style } from '@/utils/tailwind.utils'
+import { style } from '@/lib/tailwind/utilities'
 import Icon, { IconProps } from '@/components/common/Icons/Icon'
 
 interface CircularButtonProps {

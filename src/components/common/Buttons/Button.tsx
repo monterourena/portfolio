@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { style } from '@/utils/tailwind.utils'
+import { style } from '@/lib/tailwind/utilities'
 
 export interface ButtonProps {
   label: string

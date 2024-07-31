@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { IntrinsicElementsMapper } from '@/utils/common.utils'
-import { style } from '@/utils/tailwind.utils'
+import { style } from '@/lib/tailwind/utilities'
 
 interface TypographyProps {
   variant?: 'largeTitle' | 'title' | 'subtitle' | 'headline' | 'body' | 'caption'
