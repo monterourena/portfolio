@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { style } from '@/lib/tailwind/utilities'
+import { mergeStyles } from '@/lib/tailwind/utilities'
 
 export interface ButtonProps {
   label: string
@@ -11,7 +11,7 @@ const Button: FC<ButtonProps> = ({ label, onClick, variant = 'solid' }) => {
   return (
     <button
       onClick={onClick}
-      className={style(
+      className={mergeStyles(
         'h-12 px-8 py-4 rounded-full',
         'justify-center items-center inline-flex',
         variant === 'solid' && 'bg-white text-black-primary',

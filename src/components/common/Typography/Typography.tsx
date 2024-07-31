@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { IntrinsicElementsMapper } from '@/utils/common.utils'
-import { style } from '@/lib/tailwind/utilities'
+import { mergeStyles } from '@/lib/tailwind/utilities'
 
 interface TypographyProps {
   variant?: 'largeTitle' | 'title' | 'subtitle' | 'headline' | 'body' | 'caption'
@@ -65,7 +65,7 @@ const Typography: FC<TypographyProps> = ({
   }
 
   const IntrinsicElement = intrinsicElementelementMapper.getTag(variant)
-  const styles = style(
+  const styles = mergeStyles(
     colorMapper(),
     variantMapper(),
     align === 'left' && 'text-left',

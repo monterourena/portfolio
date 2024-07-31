@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { style } from '@/lib/tailwind/utilities'
+import { mergeStyles } from '@/lib/tailwind/utilities'
 
 type IconType = 'github' | 'linkedin'
 export interface SocialIconProps {
@@ -32,7 +32,7 @@ const fillColorMapper = {
 }
 
 const SocialIcon: FC<SocialIconProps> = ({ type, color = 'white-primary' }) => {
-  const styles = style('w-full h-full', fillColorMapper[color])
+  const styles = mergeStyles('w-full h-full', fillColorMapper[color])
   const iconPath = ICON_PATHS[type]
 
   return (

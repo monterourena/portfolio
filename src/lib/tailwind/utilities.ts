@@ -7,7 +7,7 @@ import { extendTailwindMerge } from 'tailwind-merge'
  * @param args - Tailwind CSS classes to merge.
  * @returns - Merged Tailwind CSS classes.
  */
-export function style(...args: ClassValue[]) {
+export function mergeStyles(...args: ClassValue[]) {
   const twMerge = extendTailwindMerge({
     override: {
       classGroups: {

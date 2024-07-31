@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { style } from '@/lib/tailwind/utilities'
+import { mergeStyles } from '@/lib/tailwind/utilities'
 
 import Typography from '@/components/common/Typography/Typography'
 
@@ -20,7 +20,7 @@ const Chip: FC<ChipProps> = ({ label, size = 'medium' }) => {
   const variant = size === 'small' ? 'caption' : 'body'
   return (
     <article
-      className={style(
+      className={mergeStyles(
         'px-4 rounded-full flex justify-center items-center',
         'bg-black-secondary border border-black-quaternary',
         size === 'small' && 'h-8',

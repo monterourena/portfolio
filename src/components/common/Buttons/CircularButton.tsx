@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { style } from '@/lib/tailwind/utilities'
+import { mergeStyles } from '@/lib/tailwind/utilities'
 import Icon, { IconProps } from '@/components/common/Icons/Icon'
 
 interface CircularButtonProps {
@@ -11,7 +11,7 @@ interface CircularButtonProps {
 
 const CircularButton: FC<CircularButtonProps> = ({ isElevated, size = 'regular', iconName = 'ArrowUpRight', iconProps }) => {
 
-  const containerStyles = style(
+  const containerStyles = mergeStyles(
     'bg-black-secondary border border-black-quaternary',
     'flex justify-center items-center rounded-full',
     size === 'small' && 'h-8 w-8',
@@ -19,7 +19,7 @@ const CircularButton: FC<CircularButtonProps> = ({ isElevated, size = 'regular',
     isElevated && 'bg-black-tertiary'
   )
 
-  const iconStyles = style(
+  const iconStyles = mergeStyles(
     'stroke-white-quaternary',
     size === 'small' && 'h-6 w-6',
     size === 'regular' && 'h-8 w-8'
