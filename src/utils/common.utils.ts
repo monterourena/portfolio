@@ -1,24 +1,30 @@
+export type IntrinsicElementsMap = { [key: string]: keyof JSX.IntrinsicElements }
+
 /**
  * IntrinsicElementsMapper
  * 
- * Maps string keys to intrinsic JSX elements
+ * @description A utility class for mapping key names to intrinsic JSX elements
  * @example
- * const mapper = new IntrinsicElementsMapper({
+ * const intrinsicElementMapper = new IntrinsicElementsMapper({
  *  primary: 'h1',
  *  secondary: 'h2',
  *  body: 'p'
  * })
  * 
- * const Tag = mapper.getTag('primary')
- * return <Tag>Example</Tag> // <h1>Example</h1>
+ * const IntrinsicElement = intrinsicElementMapper.getElement('primary')
+ * return <IntrinsicElement>Example</IntrinsicElement> // <h1>Example</h1>
  */
-export type IntrinsicElementsMap = { [key: string]: keyof JSX.IntrinsicElements }
 export class IntrinsicElementsMapper<T extends IntrinsicElementsMap> {
-  private tagsMap: T
-  constructor(tagsMap: T) {
-    this.tagsMap = tagsMap
+  private elementsMap: T
+  constructor(elementsMap: T) {
+    this.elementsMap = elementsMap
   }
-  getTag<K extends keyof T>(tagName: K): T[K] {
-    return this.tagsMap[tagName]
+  /**
+   * Get an intrinsic JSX element by its key name
+   * @param elementName - The key of the element to get
+   * @returns The intrinsic JSX element associated with the key
+   */
+  getElement<K extends keyof T>(elementName: K): T[K] {
+    return this.elementsMap[elementName]
   }
 }

@@ -25,7 +25,7 @@ const Typography: FC<TypographyProps> = ({
   weight = 'normal',
   children
 }) => {
-  const intrinsicElementelementMapper = new IntrinsicElementsMapper({
+  const intrinsicElementsMapper = new IntrinsicElementsMapper({
     largeTitle: 'h1',
     title: 'h2',
     subtitle: 'h3',
@@ -64,7 +64,7 @@ const Typography: FC<TypographyProps> = ({
     return variantMap[variant]
   }
 
-  const IntrinsicElement = intrinsicElementelementMapper.getTag(variant)
+  const IntrinsicElement = intrinsicElementsMapper.getElement(variant)
   const styles = mergeStyles(
     colorMapper(),
     variantMapper(),
