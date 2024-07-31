@@ -4,8 +4,10 @@ import { style } from '@/utils/tailwind.utils'
 
 interface TypographyProps {
   variant?: 'largeTitle' | 'title' | 'subtitle' | 'headline' | 'body' | 'caption'
+  color?: 'primary' | 'secondary' | 'tertiary' | 'quaternary'
+  hue?: 'white' | 'black'
   align?: 'left' | 'center' | 'right'
-  weight?: 'light' | 'normal'| 'medium' | 'semibold' | 'bold'
+  weight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold'
   noWrap?: boolean
   gutterBottom?: boolean
   display?: 'inline' | 'block'
@@ -14,6 +16,8 @@ interface TypographyProps {
 
 const Typography: FC<TypographyProps> = ({
   variant = 'body',
+  color = 'primary',
+  hue = 'white',
   align = 'left',
   display = 'block',
   gutterBottom = false,
@@ -21,7 +25,7 @@ const Typography: FC<TypographyProps> = ({
   weight = 'normal',
   children
 }) => {
-  const mapper = new IntrinsicElementsMapper({
+  const intrinsicElementelementMapper = new IntrinsicElementsMapper({
     largeTitle: 'h1',
     title: 'h2',
     subtitle: 'h3',
@@ -30,15 +34,40 @@ const Typography: FC<TypographyProps> = ({
     caption: 'span'
   })
 
-  const TAG = mapper.getTag('title')
+  const colorMapper = () => {
+    const colorMap = {
+      white: {
+        primary: 'text-white-primary',
+        secondary: 'text-white-secondary',
+        tertiary: 'text-white-tertiary',
+        quaternary: 'text-white-quaternary'
+      },
+      black: {
+        primary: 'text-black-primary',
+        secondary: 'text-black-secondary',
+        tertiary: 'text-black-tertiary',
+        quaternary: 'text-black-quaternary'
+      }
+    }
+    return colorMap[hue][color]
+  }
+
+  const variantMapper = () => {
+    const variantMap = {
+      largeTitle: 'text-largeTitle',
+      title: 'text-title',
+      subtitle: 'text-subtitle',
+      headline: 'text-headline',
+      body: 'text-body',
+      caption: 'text-caption'
+    }
+    return variantMap[variant]
+  }
+
+  const IntrinsicElement = intrinsicElementelementMapper.getTag(variant)
   const styles = style(
-    'text-white-primary',
-    variant === 'largeTitle' && 'text-largeTitle',
-    variant === 'title' && 'text-title',
-    variant === 'subtitle' && 'text-subtitle',
-    variant === 'headline' && 'text-headline',
-    variant === 'body' && 'text-body',
-    variant === 'caption' && 'text-caption',
+    colorMapper(),
+    variantMapper(),
     align === 'left' && 'text-left',
     align === 'center' && 'text-center',
     align === 'right' && 'text-right',
@@ -53,7 +82,7 @@ const Typography: FC<TypographyProps> = ({
     gutterBottom && 'mb-4'
   )
 
-  return <TAG className={styles}>{children}</TAG>
+  return <IntrinsicElement className={styles}>{children}</IntrinsicElement>
 }
 
 export default Typography
